@@ -20,9 +20,12 @@ class Simplex:
 
         for i in range(1, len(c) + 1):
             self.Matrix[-1][i] = c[i-1]
-
-        self.col = ["X4", "X5", "X6", "F"]
-        self.row = ["S0","X1", "X2", "X3"]
+        if var == False:
+            self.col = ["X4", "X5", "X6", "F"]
+            self.row = ["S0","X1", "X2", "X3"]
+        elif var == True:
+            self.col = ["Y4", "Y5", "Y6", "Fi"]
+            self.row = ["S0","Y1", "Y2", "Y3"]
 
         self.printMatrix(self.Matrix)
         print()
